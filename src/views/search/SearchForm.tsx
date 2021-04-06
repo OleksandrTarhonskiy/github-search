@@ -18,6 +18,7 @@ const SearchForm: React.FC = () => {
   return (
     <form>
       <Input 
+        value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
         placeholder='Search...' 
       />

@@ -24,12 +24,16 @@ const User: React.FC<userPropsType> = ({ user }) => {
       />
       <UserInfo className='flex flex-space-between'>
         <h3>{user.login}</h3>
-        <ReposNum>
-          Repos:{' '}
-          <span>
-            {user.public_repos}
-          </span>
-        </ReposNum>
+        {
+          user.public_repos ?
+            <ReposNum>
+              Repos:{' '}
+              <span>
+                {user.public_repos}
+              </span>
+            </ReposNum>
+            : null
+        }
       </UserInfo>
     </Card>
   );
