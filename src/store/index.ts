@@ -9,9 +9,9 @@ import rootReducer from './rootReducer';
 import logger from 'redux-logger';
 
 export const fetch = axios.create({
-  baseURL: 'https://api.github.com/',
+  baseURL: process.env.REACT_APP_API_URL,
   headers: {
-    'User-Agent': 'OleksandrTarhonskiy',
+    'User-Agent': process.env.REACT_APP_GITHUB_USER,
     'Accept': 'application/vnd.github.v3+json'
   },
 });

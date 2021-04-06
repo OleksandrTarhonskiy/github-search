@@ -7,9 +7,6 @@ import { ThunkDispatch } from 'redux-thunk';
 export type ErrorType = string | boolean
 
 export type userType = {
-  id?: number,
-  'avatar_url'?: string,
-  login?: string,
   [key: string]: any
 }
 
