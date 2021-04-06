@@ -9,6 +9,7 @@ import {
 import { fetchRepos } from '../../store/repos/actions';
 import RepoItem from './RepoItem';
 import ReposSearch from './ReposSearch';
+import Loading from 'components/Loading';
 
 type ReposSearchPropsType = {
   name: string;
@@ -17,7 +18,7 @@ type ReposSearchPropsType = {
 const ReposList: React.FC<ReposSearchPropsType> = ({ name }) => {
   const [query, setQuery] = useState<string>('');
   const dispatch: AppDispatch = useDispatch();
-  // const loading: boolean = useSelector(state => state.users.loading);
+  const loading: boolean = useSelector<appStateType, boolean>(state => state.repos.loading);
   const data: repoType[] = useSelector<appStateType, repoType[]>(state => state.repos.data);
   // const error: boolean = useSelector(state => state.users.error);
 
@@ -25,8 +26,12 @@ const ReposList: React.FC<ReposSearchPropsType> = ({ name }) => {
     dispatch(fetchRepos(name));
   }, [dispatch, name]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
-    <div>
+    <>
       <ReposSearch  
         query={query}
         onSetQuery={setQuery}
@@ -39,7 +44,7 @@ const ReposList: React.FC<ReposSearchPropsType> = ({ name }) => {
           />
         )
       }
-    </div>
+    </>
   );
 };
 

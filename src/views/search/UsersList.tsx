@@ -6,11 +6,16 @@ import {
   appStateType,
   userType 
 } from '../../shared/types';
+import Loading from 'components/Loading';
 
 const UsersList: React.FC = () => {
-  // const loading: boolean = useSelector(state => state.users.loading);
+  const loading: boolean = useSelector<appStateType, boolean>(state => state.users.loading);
   const data: userType[] = useSelector<appStateType, userType[]>(state => state.users.data);
   // const error: boolean = useSelector(state => state.users.error);
+  
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
