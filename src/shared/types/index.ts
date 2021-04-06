@@ -4,6 +4,8 @@ import { AnyAction } from 'redux';
 import { AxiosInstance } from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
 
+export type ErrorType = string | boolean
+
 export type userType = {
   id?: number,
   'avatar_url'?: string,
@@ -17,19 +19,19 @@ export type repoType = {
 
 export type usersStateType = {
   loading: boolean,
-  error: boolean,
+  error: ErrorType,
   data: userType[]
 }
 
 export type userStateType = {
   loading: boolean,
-  error: boolean,
+  error: ErrorType,
   data: userType
 }
 
 export type reposStateType = {
   loading: boolean,
-  error: boolean,
+  error: ErrorType,
   data: repoType[]
 }
 
