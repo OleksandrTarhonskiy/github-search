@@ -4,18 +4,22 @@ import {
   Switch, 
   Route 
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
+import store from '../store';
 import SearchPage from './search/SearchPage';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={SearchPage} />
-      </Switch>
-      <GlobalStyle />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={SearchPage} />
+        </Switch>
+        <GlobalStyle />
+      </BrowserRouter>
+    </Provider>
   );
 };
 

@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+import { useDebounce } from 'use-debounce';
+
+import { AppDispatch } from '../../shared/types';
+import { fetchUsers } from '../../store/users/actions';
 
 const SearchForm: React.FC = () => {
+  const [value, setValue] = useState<string>('');
+  const [query] = useDebounce(value, 1000);
+  const dispatch: AppDispatch = useDispatch();
+
+  useEffect(() => {
+    if (query) dispatch(fetchUsers(query));
+  }, [dispatch, query]);
+
   return (
     <Form>
       <Form.Field>
-        <Input loading={false} placeholder='Search...' />
+        <Input 
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+          loading={false} 
+          placeholder='Search...' 
+        />
       </Form.Field>
     </Form>
   );
