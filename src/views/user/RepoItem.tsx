@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from '../../components/Card';
+import Card from 'components/Card';
 
-import { repoType } from '../../shared/types';
+import { repoType } from 'shared/types';
 
 const RepoItem: React.FC<repoType> = ({ repo }) => {
   return (

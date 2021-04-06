@@ -6,8 +6,8 @@ import {
   appStateType,
   ErrorType,
   repoType 
-} from '../../shared/types';
-import { fetchRepos } from '../../store/repos/actions';
+} from 'shared/types';
+import { fetchRepos } from 'store/repos/actions';
 import RepoItem from './RepoItem';
 import ReposSearch from './ReposSearch';
 import Loading from 'components/Loading';

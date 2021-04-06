@@ -7,24 +7,27 @@ import {
 import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
-import store from '../store';
+import store from 'store';
 import SearchPage from './search/SearchPage';
 import UserPage from './user/UserPage';
-import Content from '../components/Content';
+import Content from 'components/Content';
+import AppLayout from 'layout/AppLayout';
 
 const App: React.FC = () => {
   return (
-    <Content>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={SearchPage} />
-            <Route exact path="/users/:name" component={UserPage} />
-          </Switch>
-          <GlobalStyle />
-        </BrowserRouter>
-      </Provider>
-    </Content>
+    <AppLayout>
+      <Content>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={SearchPage} />
+              <Route exact path="/users/:name" component={UserPage} />
+            </Switch>
+            <GlobalStyle />
+          </BrowserRouter>
+        </Provider>
+      </Content>
+    </AppLayout>
   );
 };
 
