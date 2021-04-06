@@ -31,8 +31,6 @@ const UserPage: React.FC<UserPageProps> = ({ match }) => {
     dispatch(fetchUser(match.params.name));
   }, [dispatch, match.params.name]);
 
-
-
   return (
     <>
       {
