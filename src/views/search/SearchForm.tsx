@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
 import { useDebounce } from 'use-debounce';
 
@@ -17,14 +16,12 @@ const SearchForm: React.FC = () => {
   }, [dispatch, query]);
 
   return (
-    <Form>
-      <Form.Field>
-        <Input 
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
-          placeholder='Search...' 
-        />
-      </Form.Field>
-    </Form>
+    <form>
+      <Input 
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+        placeholder='Search...' 
+      />
+    </form>
   );
 };
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
 
 import User from './User';
 import { useSelector } from 'react-redux';
@@ -14,18 +13,16 @@ const UsersList: React.FC = () => {
   // const error: boolean = useSelector(state => state.users.error);
 
   return (
-    <Grid columns={1} stackable>
-      <Grid.Column>
-        {
-          data.map(user => 
-            <User 
-              key={user.id} 
-              user={user}
-            />
-          ) 
-        }
-      </Grid.Column>
-    </Grid>
+    <>
+      {
+        data.map(user => 
+          <User 
+            key={user.id} 
+            user={user}
+          />
+        ) 
+      }
+    </>
   );
 };
 
