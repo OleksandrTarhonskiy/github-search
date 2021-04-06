@@ -10,7 +10,7 @@ import Avatar from 'components/Avatar';
 import {
   appStateType,
   userType 
-} from '../../shared/types';
+} from 'shared/types';
 import ReposList from './ReposList';
 import Loading from 'components/Loading';
 import Error from 'components/Error';

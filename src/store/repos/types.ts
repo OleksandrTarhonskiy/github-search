@@ -3,7 +3,7 @@ import {
   GET_REPO_SUCCESS,
   GET_REPO_FAILURE
 } from './constants';
-import { repoType } from '../../shared/types';
+import { repoType } from 'shared/types';
 
 type fetchReposReqActionType = {
   type: typeof GET_REPO_REQ

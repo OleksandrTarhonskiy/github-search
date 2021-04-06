@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useDebounce } from 'use-debounce';
 
-import { AppDispatch } from '../../shared/types';
-import { fetchUsers } from '../../store/users/actions';
-import Input from '../../components/Input';
+import { AppDispatch } from 'shared/types';
+import { fetchUsers } from 'store/users/actions';
+import Input from 'components/Input';
 
 const SearchForm: React.FC = () => {
   const [value, setValue] = useState<string>('');

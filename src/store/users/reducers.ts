@@ -3,7 +3,7 @@ import {
   GET_USERS_SUCCESS,
   GET_USERS_FAILURE
 } from './constants';
-import { usersStateType } from '../../shared/types';
+import { usersStateType } from 'shared/types';
 import { actionTypes } from './types';
 
 const initialState: usersStateType = { data: [], loading: false, error: false };

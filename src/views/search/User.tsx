@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { userType } from '../../shared/types';
+import { userType } from 'shared/types';
 import { useHistory } from 'react-router-dom';
-import Avatar from '../../components/Avatar';
-import Card from '../../components/Card';
+import Avatar from 'components/Avatar';
+import Card from 'components/Card';
 
 type userPropsType = {
   user: userType

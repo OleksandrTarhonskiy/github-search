@@ -3,7 +3,7 @@ import {
   GET_USER_SUCCESS,
   GET_USER_FAILURE
 } from './constants';
-import { userType } from '../../shared/types';
+import { userType } from 'shared/types';
 
 type fetchUserReqActionType = {
   type: typeof GET_USER_REQ

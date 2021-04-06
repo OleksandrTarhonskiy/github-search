@@ -3,8 +3,8 @@ import {
   GET_REPO_SUCCESS,
   GET_REPO_FAILURE
 } from './constants';
-import { ThunkResult } from '../../shared/types';
-import { fetch } from '../index';
+import { ThunkResult } from 'shared/types';
+import { fetch } from '../';
 
 export const fetchRepos = (username: string): ThunkResult<Promise<void>> => {
   return async(dispatch): Promise<void> => {

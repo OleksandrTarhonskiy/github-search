@@ -6,7 +6,7 @@ import {
   appStateType,
   ErrorType,
   userType 
-} from '../../shared/types';
+} from 'shared/types';
 import Loading from 'components/Loading';
 import Error from 'components/Error';
 
