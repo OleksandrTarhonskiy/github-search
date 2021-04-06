@@ -11,7 +11,8 @@ import logger from 'redux-logger';
 export const fetch = axios.create({
   baseURL: 'https://api.github.com/',
   headers: {
-    'User-Agent': 'OleksandrTarhonskiy'
+    'User-Agent': 'OleksandrTarhonskiy',
+    'Accept': 'application/vnd.github.v3+json'
   },
 });
 

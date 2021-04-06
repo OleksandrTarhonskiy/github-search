@@ -9,17 +9,22 @@ import { createGlobalStyle } from 'styled-components';
 
 import store from '../store';
 import SearchPage from './search/SearchPage';
+import UserPage from './user/UserPage';
+import Content from '../components/Content';
 
 const App: React.FC = () => {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={SearchPage} />
-        </Switch>
-        <GlobalStyle />
-      </BrowserRouter>
-    </Provider>
+    <Content>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={SearchPage} />
+            <Route exact path="/users/:name" component={UserPage} />
+          </Switch>
+          <GlobalStyle />
+        </BrowserRouter>
+      </Provider>
+    </Content>
   );
 };
 
@@ -32,6 +37,12 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     position: relative;
     font-family: Roboto, sans-serif;
+  }
+
+  hr {
+    border-top: 1px solid rgba(34,36,38,.15);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin: 15px 0;
   }
 
   .flex {

@@ -2,19 +2,24 @@ import React from 'react';
 import { Card } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { userType } from '../../shared/types';
+import { useHistory } from 'react-router-dom';
+import Avatar from '../../components/Avatar';
 
-type userProps = {
+type userPropsType = {
   user: userType
 }
 
-const User: React.FC<userProps> = ({ user }) => {
+const User: React.FC<userPropsType> = ({ user }) => {
+  const history = useHistory();
+
   return (
-    <CardWrapper>
+    <CardWrapper onClick={() => history.push(`/users/${user.login}`)}>
       <Card fluid>
         <Card.Content className='flex flex-space-between'>
           <Avatar 
             src={user.avatar_url}
             alt='avatar'
+            className='md'
           />
           <UserInfo className='flex flex-space-between'>
             <h3>{user.login}</h3>
@@ -34,12 +39,6 @@ const User: React.FC<userProps> = ({ user }) => {
 const CardWrapper = styled.div`
   margin: 10px 0;
   cursor: pointer;
-`;
-
-const Avatar = styled.img`
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
 `;
 
 const UserInfo = styled.div`

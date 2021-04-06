@@ -3,12 +3,12 @@ import {
   GET_USERS_SUCCESS,
   GET_USERS_FAILURE
 } from './constants';
-import { usersState } from '../../shared/types';
+import { usersStateType } from '../../shared/types';
 import { actionTypes } from './types';
 
-const initialState: usersState = { data: [], loading: false, error: false };
+const initialState: usersStateType = { data: [], loading: false, error: false };
 
-const users = (state = initialState, action: actionTypes): usersState => {
+const users = (state = initialState, action: actionTypes): usersStateType => {
   switch (action.type) {
   case GET_USERS_REQ:
     return {
