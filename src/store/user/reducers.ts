@@ -1,14 +1,21 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import {
   GET_USER_REQ,
   GET_USER_SUCCESS,
   GET_USER_FAILURE
 } from './constants';
-import { userStateType } from 'shared/types';
+import { ErrorType } from 'shared/types';
 import { actionTypes } from './types';
 
-const initialState: userStateType = { data: {}, loading: false, error: false };
+type initialStateType = {
+  data: {},
+  loading: boolean,
+  error: ErrorType
+}
 
-const users = (state = initialState, action: actionTypes): userStateType => {
+const initialState: initialStateType = { data: {}, loading: false, error: false };
+
+const users = (state = initialState, action: actionTypes): initialStateType => {
   switch (action.type) {
   case GET_USER_REQ:
     return {

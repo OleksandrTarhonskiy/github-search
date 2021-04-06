@@ -4,7 +4,11 @@ import Card from 'components/Card';
 import { repoType } from 'shared/types';
 import Icon from 'components/Icon';
 
-const RepoItem: React.FC<repoType> = ({ repo }) => {
+type RepoItemPropsType = {
+  repo: repoType
+}
+
+const RepoItem: React.FC<RepoItemPropsType> = ({ repo }) => {
   return (
     <Card 
       className='flex flex-space-between' 

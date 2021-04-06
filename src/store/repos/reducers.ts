@@ -3,10 +3,16 @@ import {
   GET_REPO_SUCCESS,
   GET_REPO_FAILURE
 } from './constants';
-import { reposStateType } from 'shared/types';
+import { ErrorType, reposStateType } from 'shared/types';
 import { actionTypes } from './types';
 
-const initialState: reposStateType = { data: [], loading: false, error: false };
+type initialStateType = {
+  data: [],
+  loading: boolean,
+  error: ErrorType
+}
+
+const initialState: initialStateType = { data: [], loading: false, error: false };
 
 const users = (state = initialState, action: actionTypes): reposStateType => {
   switch (action.type) {

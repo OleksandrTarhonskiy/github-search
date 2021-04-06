@@ -25,6 +25,7 @@ const User: React.FC<userPropsType> = ({ user }) => {
       <UserInfo className='flex flex-space-between'>
         <h3>{user.login}</h3>
         {
+          /*
           user.public_repos ?
             <ReposNum>
               Repos:{' '}
@@ -33,6 +34,7 @@ const User: React.FC<userPropsType> = ({ user }) => {
               </span>
             </ReposNum>
             : null
+          */
         }
       </UserInfo>
     </Card>
@@ -49,12 +51,12 @@ const UserInfo = styled.div`
   }
 `;
 
-const ReposNum = styled.p`
-  font-size: 16px;
+// const ReposNum = styled.p`
+//   font-size: 16px;
 
-  span {
-    color: #a8a8a8;
-  }
-`;
+//   span {
+//     color: #a8a8a8;
+//   }
+// `;
 
 export default User;

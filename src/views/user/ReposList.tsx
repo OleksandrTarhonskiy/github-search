@@ -43,7 +43,7 @@ const ReposList: React.FC<ReposSearchPropsType> = ({ name }) => {
         onSetQuery={setQuery}
       />
       {
-        data.filter(repo => repo.name.includes(query)).map(repo => 
+        data.filter((repo: repoType) => repo.name.includes(query)).map(repo => 
           <RepoItem 
             key={repo.id}
             repo={repo}
