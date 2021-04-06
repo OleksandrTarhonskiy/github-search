@@ -29,6 +29,22 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     font-family: Roboto, sans-serif;
   }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-center {
+    justify-content: center;
+  }
+
+  .flex-space-between {
+    justify-content: space-between;
+  }
 `;
 
 export default App;
