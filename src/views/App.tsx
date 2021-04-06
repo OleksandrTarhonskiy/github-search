@@ -15,19 +15,19 @@ import AppLayout from 'layout/AppLayout';
 
 const App: React.FC = () => {
   return (
-    <AppLayout>
-      <Content>
-        <Provider store={store}>
-          <BrowserRouter>
+    <BrowserRouter>
+      <AppLayout>
+        <Content>
+          <Provider store={store}>
             <Switch>
               <Route exact path="/" component={SearchPage} />
               <Route exact path="/users/:name" component={UserPage} />
             </Switch>
             <GlobalStyle />
-          </BrowserRouter>
-        </Provider>
-      </Content>
-    </AppLayout>
+          </Provider>
+        </Content>
+      </AppLayout>
+    </BrowserRouter>
   );
 };
 
