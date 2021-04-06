@@ -62,9 +62,9 @@ const UserPage: React.FC<UserPageProps> = ({ match }) => {
           </>
       }
       <hr />
-      <div>
-        {data.bio}
-      </div>
+      <Bio>
+        <p>{data.bio}</p>
+      </Bio>
       <ReposList name={match.params.name} />
     </>
   );
@@ -73,6 +73,15 @@ const UserPage: React.FC<UserPageProps> = ({ match }) => {
 
 const UserDetails = styled.div`
   margin-left: 35px;
+`;
+
+const Bio = styled.div`
+  padding: 15px;
+
+  p {
+    font-size: 16px;
+    color: #4f4f4f
+  }
 `;
 
 export default UserPage;
