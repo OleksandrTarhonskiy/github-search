@@ -9,6 +9,7 @@ import {
 } from 'shared/types';
 import Loading from 'components/Loading';
 import Error from 'components/Error';
+import EmptyContent from 'components/EmptyContent';
 
 const UsersList: React.FC = () => {
   const loading: boolean = useSelector<appStateType, boolean>(state => state.users.loading);
@@ -26,12 +27,15 @@ const UsersList: React.FC = () => {
   return (
     <>
       {
-        data.map(user => 
-          <User 
-            key={user.id} 
-            user={user}
-          />
-        ) 
+        data.length ?
+          data.map(user => 
+            <User 
+              key={user.id} 
+              user={user}
+            />
+          ) 
+          :
+          <EmptyContent title="users" />
       }
     </>
   );

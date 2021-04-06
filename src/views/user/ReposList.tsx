@@ -12,6 +12,7 @@ import RepoItem from './RepoItem';
 import ReposSearch from './ReposSearch';
 import Loading from 'components/Loading';
 import Error from 'components/Error';
+import EmptyContent from 'components/EmptyContent';
 
 type ReposSearchPropsType = {
   name: string;
@@ -28,6 +29,8 @@ const ReposList: React.FC<ReposSearchPropsType> = ({ name }) => {
     dispatch(fetchRepos(name));
   }, [dispatch, name]);
 
+  const getFilteredRepos = (): repoType[] => data.filter((repo: repoType) => repo.name.includes(query));
+
   if (loading) {
     return <Loading />;
   }
@@ -43,12 +46,15 @@ const ReposList: React.FC<ReposSearchPropsType> = ({ name }) => {
         onSetQuery={setQuery}
       />
       {
-        data.filter((repo: repoType) => repo.name.includes(query)).map(repo => 
-          <RepoItem 
-            key={repo.id}
-            repo={repo}
-          />
-        )
+        getFilteredRepos().length ?
+          getFilteredRepos().map((repo: repoType) => 
+            <RepoItem 
+              key={repo.id}
+              repo={repo}
+            />
+          ) 
+          :
+          <EmptyContent title="repos" />
       }
     </>
   );

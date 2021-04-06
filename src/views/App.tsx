@@ -42,6 +42,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: Roboto, sans-serif;
   }
 
+  h4 {
+    text-align: center;
+  }
+
   hr {
     border-top: 1px solid rgba(34,36,38,.15);
     border-bottom: 1px solid rgba(255,255,255,.1);
