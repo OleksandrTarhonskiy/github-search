@@ -11,6 +11,10 @@ export type userType = {
   [key: string]: any
 }
 
+export type repoType = {
+  [key: string]: any
+}
+
 export type usersStateType = {
   loading: boolean,
   error: boolean,
@@ -23,9 +27,16 @@ export type userStateType = {
   data: userType
 }
 
+export type reposStateType = {
+  loading: boolean,
+  error: boolean,
+  data: repoType[]
+}
+
 export type appStateType = {
   users: usersStateType,
-  user: userStateType
+  user: userStateType,
+  repos: reposStateType
 }
 
 export type AppDispatch = ThunkDispatch<appStateType, any, AnyAction>

@@ -11,6 +11,7 @@ import {
   appStateType,
   userType 
 } from '../../shared/types';
+import ReposList from './ReposList';
 
 interface RouterProps {
   name: string;
@@ -50,6 +51,7 @@ const UserPage: React.FC<UserPageProps> = ({ match }) => {
       <div>
         {data.bio}
       </div>
+      <ReposList name={match.params.name} />
     </>
   );
 };
