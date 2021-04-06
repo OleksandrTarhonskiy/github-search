@@ -6,11 +6,13 @@ import {
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
+import SearchPage from './search/SearchPage';
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" render={() => <h1>Home page</h1>} />
+        <Route exact path="/" component={SearchPage} />
       </Switch>
       <GlobalStyle />
     </BrowserRouter>
