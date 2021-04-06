@@ -13,7 +13,6 @@ const Input = styled.input`
   color: #222426;
   border-radius: 5px;
   box-shadow: 0 0 0 0 transparent inset;
-  transition: color .1s ease,border-color .1s ease;
 `;
 
 export default Input;
