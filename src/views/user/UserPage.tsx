@@ -53,7 +53,7 @@ const UserPage: React.FC<UserPageProps> = ({ match }) => {
                     <p>{data.login}</p>
                     {data.email && <p>{data.email}</p>}
                     {data.location && <p>{data.location}</p>}
-                    <p>{data.created_at}</p>
+                    <p>{new Date(data.created_at).toDateString()}</p>
                     <p>{data.followers} Followers</p>
                     <p>{data.following} Folowing</p>
                   </UserDetails>
