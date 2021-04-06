@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'components/Card';
 
 import { repoType } from 'shared/types';
+import Icon from 'components/Icon';
 
 const RepoItem: React.FC<repoType> = ({ repo }) => {
   return (
@@ -10,11 +11,20 @@ const RepoItem: React.FC<repoType> = ({ repo }) => {
       onClick={() => window.location.href = repo.html_url}
     >
       <div className='flex flex-column flex-center'>
-        <h4>{repo.full_name}</h4>
+        <h4>
+          <Icon className='fab fa-github' />{' '}
+          {repo.full_name}
+        </h4>
       </div>
       <div className='flex flex-column flex-center'>
-        <p>{repo.forks_count} Forks</p>
-        <p>{repo.stargazers_count} Stars</p>
+        <p>
+          {repo.forks_count}{' '}
+          <Icon className='fas fa-code-branch' />
+        </p>
+        <p>
+          {repo.stargazers_count}{' '}
+          <Icon className='fas fa-star' />
+        </p>
       </div>
     </Card>
   );
